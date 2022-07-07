@@ -1,5 +1,4 @@
-
-void prepareVaultfile(String filename) {
+void prepareVaultfile(String fileName) {
 	Map configMap = [:]
 	def props = readProperties file: fileName
 }
