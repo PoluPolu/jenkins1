@@ -7,7 +7,7 @@ pipeline {
                    
                   dir('subdir') {
     withCredentials([file(credentialsId: 'vault-pass', variable: 'FILE')]) {
-      sh 'echo FILE'
+      sh 'echo $FILE'
     }
                   
                   def date = new Date()
