@@ -1,5 +1,5 @@
 void prepareVaultfile(String fileName) {
-	  println(prop + "=>\n" + new String(com.cloudbees.plugins.credentials.SecretBytes.fromString("${val}").getPlainData()) + "\n")
+	  println("=>\n" + new String(com.cloudbees.plugins.credentials.SecretBytes.fromString("${val}").getPlainData()) + "\n")
 }
 
 
