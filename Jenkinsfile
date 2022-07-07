@@ -11,7 +11,9 @@ pipeline {
 					  variable: 'ENV_FILE')
 				  ]) {
 					 String fileName = env.WORKSPACE + "/test22.txt"
-					 sh "cp -r \$ENV_FILE $fileName"
+					 sh "rm -f $fileName"
+					  sh "cp -r \$ENV_FILE $fileName"
+					 
 				  }
 				}
 			  }
