@@ -1,14 +1,15 @@
 pipeline {
     agent any
-	environment {
-		ANSIBLE_VAULT = credentials('vault-txt')
-	}
-
+    environment { 
+        CC = 'clang'
+    }
     stages {
-        stage('Take Creds') {
+        stage('Example') {
+            environment { 
+                AN_ACCESS_KEY = credentials('my-predefined-secret-text') 
+            }
             steps {
-		echo "To call username use ${Username}"
-                echo "To call password use ${Password}"
+                sh 'printenv'
             }
         }
     }
