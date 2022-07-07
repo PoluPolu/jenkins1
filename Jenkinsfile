@@ -8,7 +8,7 @@ pipeline {
                 script{
                 String fileName = env.WORKSPACE + "/test.txt"
                 def newFile = new File(fileName)
-                newFile.write("teges szmeges")
+                newFile.write("teges szmeges2")
                 }
             }
         }
