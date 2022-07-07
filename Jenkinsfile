@@ -4,7 +4,7 @@ pipeline {
 		stage('string (secret text)') {
 			  steps {
 				
-				  step {	
+				  script {	
 				  withCredentials([
 					file(
 					  credentialsId: 'vault-pass22',
