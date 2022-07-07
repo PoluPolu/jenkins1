@@ -18,7 +18,7 @@ pipeline {
 
 					// the current Jenkins instances will support the short syntax, too:
 					echo "Current workspace is $WORKSPACE"
-                }
+                
             }
           
         }
