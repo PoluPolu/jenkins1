@@ -2,18 +2,7 @@ import java.io.File
 pipeline {
     agent any
 
-    stages {
-        stage('Hello') {
-            steps {
-                script{
-                
-                def newFile = new File("test.txt")
-                newFile.write("teges szmeges")
-		println	newFile.text
-                }
-            }
-        }
-		
+ 
 		stage('Dir') {
             steps {
 				script {
