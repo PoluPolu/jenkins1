@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script{
                 
-                def newFile = new File("/tmp/1/test.txt")
+                def newFile = new File("test.txt")
                 newFile.write("teges szmeges")
 		println	newFile.text
                 }
