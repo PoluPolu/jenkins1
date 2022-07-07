@@ -6,9 +6,8 @@ pipeline {
         stage('Hello') {
             steps {
                 script{
-                
-                def newFile = new File("env.WORKSPACE/test.txt")
-				
+                String fileName = env.WORKSPACE + "/test.txt"
+                def newFile = new File(fileName)
                 newFile.write("teges szmeges")
                 }
             }
