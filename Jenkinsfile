@@ -1,6 +1,6 @@
 node {
   dir('subdir') {
-    withCredentials([file(credentialsId: 'secret', variable: 'FILE')]) {
+    withCredentials([file(credentialsId: 'vault-pass', variable: 'FILE')]) {
       sh 'use $FILE'
     }
   }
