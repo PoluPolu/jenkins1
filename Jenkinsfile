@@ -3,12 +3,14 @@ pipeline {
    stages {
        stage('write') {
            steps {
-               script {
-                   
-                  dir('subdir') {
+              
+               dir('subdir') {
     withCredentials([file(credentialsId: 'vault-pass', variable: 'FILE')]) {
       sh 'echo $FILE'
     }
+               script {
+                   
+                 
                   
                   def date = new Date()
                    def data = "Hello World\nSecond line\n" + date
