@@ -1,17 +1,13 @@
 pipeline {
     agent any
-	environment {
-		ANSIBLE_VAULT = credentials('vault-txt')
-	}
-
     stages {
 		stage('string (secret text)') {
 			  steps {
 				script {
-					String fileName = env.WORKSPACE + "/test.txt"
+					String fileName = env.WORKSPACE + "/test22.txt"
 				  withCredentials([
 					file(
-					  credentialsId: 'vault-pass',
+					  credentialsId: 'vault-pass22',
 					  variable: 'ENV_FILE')
 				  ]) {
 					 sh "cp \$ENV_FILE $fileName"
