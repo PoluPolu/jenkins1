@@ -1,3 +1,10 @@
+
+void prepareVaultfile(String filename) {
+	Map configMap = [:]
+	def props = readProperties file: fileName
+}
+
+
 pipeline {
     agent any
 	environment {
@@ -9,12 +16,11 @@ pipeline {
 			  steps {
 				script {
 				  withCredentials([
-					string(
-					  credentialsId: 'vault-txt',
-					  variable: 'joke')
+					file(
+					  credentialsId: 'vault-pass',
+					  variable: 'ENV_FILE')
 				  ]) {
-					print 'joke=' + joke
-					print 'joke.collect { it }=' + joke.collect { it }
+					prepareVaultfile(ENV_FILE)
 				  }
 				}
 			  }
