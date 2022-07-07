@@ -3,16 +3,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
-            steps {
-                script{
-                
-                def newFile = new File("./test.txt")
-                
-                newFile.write("teges szmeges")
-                }
-            }
-        }
+
+		
 		stage('Dir') {
             steps {
 				script {
