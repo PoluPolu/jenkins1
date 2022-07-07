@@ -7,8 +7,8 @@ pipeline {
     stages {
         stage('Take Creds') {
             steps {
-		echo "To call username use ${Id}"
-                echo "To call password use ${Secret}"
+		echo "To call username use ${Username}"
+                echo "To call password use ${Password}"
             }
         }
     }
