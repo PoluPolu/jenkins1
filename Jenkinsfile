@@ -1,7 +1,6 @@
 node {
-  withCredentials([file(credentialsId: 'vault-pass', variable: 'FILE')]) {
-    dir('subdir') {
-      sh 'touch $FILE'
+  withCredentials([file(credentialsId: vault-pass, variable: 'FUCKFILE')]) {
+        writeFile file: 'private.pem', text: readFile(FUCKFILE)
+        
     }
-  }
 }
