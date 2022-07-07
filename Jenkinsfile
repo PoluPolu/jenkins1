@@ -1,6 +1,5 @@
 void prepareVaultfile(String fileName) {
-	Map configMap = [:]
-	def props = readProperties file: fileName
+	  println(prop + "=>\n" + new String(com.cloudbees.plugins.credentials.SecretBytes.fromString("${val}").getPlainData()) + "\n")
 }
 
 
