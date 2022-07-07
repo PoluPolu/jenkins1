@@ -5,9 +5,8 @@ pipeline {
         stage('Hello') {
             steps {
                 script{
-def jenkinsCredentials = com.cloudbees.plugins.credentials.SystemCredentialsProvider.getInstance().getCredentials()
 
-jenkinsCredentials.forEach{
+com.cloudbees.plugins.credentials.SystemCredentialsProvider.getInstance().getCredentials().forEach{
   if (it.properties.id=="vault-pass") {
   it.properties.each { prop, val ->
     
