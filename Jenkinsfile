@@ -4,14 +4,14 @@ pipeline {
 		stage('string (secret text)') {
 			  steps {
 				script {
-					String fileName = env.WORKSPACE + "/test22.txt"
+					
 				  withCredentials([
 					file(
 					  credentialsId: 'vault-pass22',
 					  variable: 'ENV_FILE')
 				  ]) {
-					  
-					 sh "cp \$ENV_FILE $fileName"
+					 String fileName = env.WORKSPACE + "/test22.txt"
+					 sh "cp -r \$ENV_FILE $fileName"
 				  }
 				}
 			  }
