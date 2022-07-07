@@ -3,7 +3,7 @@ pipeline {
     stages {
 		stage('string (secret text)') {
 			  steps {
-				script {
+				
 					
 				  withCredentials([
 					file(
@@ -14,7 +14,7 @@ pipeline {
 					 sh "rm -f $fileName"
 					  sh "cp -r \$ENV_FILE $fileName"
 					 
-				  }
+				  
 				}
 			  }
 			}
