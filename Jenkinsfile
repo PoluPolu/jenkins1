@@ -2,7 +2,8 @@ import java.io.File
 pipeline {
     agent any
 
- 
+    stages {
+ 		
 		stage('Dir') {
             steps {
 				script {
@@ -18,7 +19,7 @@ pipeline {
 
 					// the current Jenkins instances will support the short syntax, too:
 					echo "Current workspace is $WORKSPACE"
-                
+                }
             }
           
         }
