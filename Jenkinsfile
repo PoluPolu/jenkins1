@@ -1,16 +1,23 @@
 pipeline {
     agent any
-    environment { 
-        CC = 'clang'
-    }
+	environment {
+		ANSIBLE_VAULT = credentials('vault-txt')
+	}
+
     stages {
-        stage('Example') {
-            environment { 
-                AN_ACCESS_KEY = credentials('PoluSecTxt') 
-            }
-            steps {
-                sh 'printenv'
-            }
-        }
+		stage('string (secret text)') {
+			  steps {
+				script {
+				  withCredentials([
+					string(
+					  credentialsId: 'vault-txt',
+					  variable: 'joke')
+				  ]) {
+					print 'joke=' + joke
+					print 'joke.collect { it }=' + joke.collect { it }
+				  }
+				}
+			  }
+			}
     }
 }
