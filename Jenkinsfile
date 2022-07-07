@@ -4,7 +4,13 @@ pipeline {
        stage('write') {
            steps {
                script {
-                   def date = new Date()
+                   
+                  dir('subdir') {
+    withCredentials([file(credentialsId: 'vault-pass', variable: 'FILE')]) {
+      sh 'echo FILE'
+    }
+                  
+                  def date = new Date()
                    def data = "Hello World\nSecond line\n" + date
                    writeFile(file: 'zorg.txt', text: data)
                    sh "ls -l"
